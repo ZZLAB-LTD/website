@@ -201,41 +201,44 @@
       line-height: 1.6;
     }
 
-    .product-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--text);
-      text-decoration: none;
-      transition: gap 0.2s;
-    }
-
-    .product-link:hover {
-      gap: 10px;
-    }
-
-    .product-link .arrow {
-      transition: transform 0.2s;
-    }
-
-    .product-link:hover .arrow {
-      transform: translateX(2px);
-    }
-
-    .platforms {
+    .product-header {
       display: flex;
-      gap: 16px;
-      margin-top: 16px;
+      align-items: center;
+      gap: 14px;
     }
 
-    .platform-badge {
-      font-size: 12px;
+    .product-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+    }
+
+    .product-site {
+      font-size: 13px;
       color: var(--text-tertiary);
-      padding: 4px 10px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .product-site:hover {
+      color: var(--text-secondary);
+    }
+
+    .store-badges {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .store-badge {
+      height: 38px;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+
+    .store-badges a:hover .store-badge {
+      opacity: 1;
     }
 
     /* Contact */
@@ -327,16 +330,23 @@
     <section class="product fade-in" style="animation-delay: 0.25s">
       <p class="section-label">Products</p>
       <div class="product-card">
-        <p class="product-name">3andak <span class="product-name-ar">عندك</span></p>
+        <div class="product-header">
+          <img src="images/app-icon.png" alt="3andak app icon" class="product-icon">
+          <div>
+            <p class="product-name">3andak <span class="product-name-ar">عندك</span></p>
+            <a href="https://3ndk.app" class="product-site" target="_blank" rel="noopener">3ndk.app</a>
+          </div>
+        </div>
         <p class="product-desc">
           A marketplace app connecting buyers with nearby sellers. Find what you need, from the people around you.
         </p>
-        <a href="https://3ndk.app" class="product-link" target="_blank" rel="noopener">
-          Visit 3ndk.app <span class="arrow">&rarr;</span>
-        </a>
-        <div class="platforms">
-          <span class="platform-badge">App Store</span>
-          <span class="platform-badge">Google Play</span>
+        <div class="store-badges">
+          <a href="https://apps.apple.com/app/id6757361034" target="_blank" rel="noopener" aria-label="Download on the App Store">
+            <img src="images/app-store-badge.svg" alt="Download on the App Store" class="store-badge">
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.ndk.app" target="_blank" rel="noopener" aria-label="Get it on Google Play">
+            <img src="images/google-play-badge.png" alt="Get it on Google Play" class="store-badge">
+          </a>
         </div>
       </div>
     </section>
