@@ -11,7 +11,7 @@
   <meta property="og:description" content="Building digital products that matter. Mobile apps, web platforms, and SaaS — crafted in Egypt.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://zzlab.dev">
-  <meta property="og:image" content="https://zzlab.dev/og.png">
+  <meta property="og:image" content="https://zzlab.dev/images/logo.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="zzlab — Software Development Studio">
   <meta name="twitter:description" content="Building digital products that matter.">
@@ -29,7 +29,7 @@
     }
   }
   </script>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="icon" type="image/png" href="images/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -96,11 +96,14 @@
     }
 
     .logo {
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: var(--text);
       text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 24px;
+      filter: invert(1);
     }
 
     nav a.contact-link {
@@ -308,7 +311,7 @@
 
   <nav>
     <div class="container">
-      <a href="/" class="logo">zzlab</a>
+      <a href="/" class="logo"><img src="images/logo.png" alt="zzlab" class="logo-img"></a>
       <a href="mailto:hello@zzlab.dev" class="contact-link">hello@zzlab.dev</a>
     </div>
   </nav>
