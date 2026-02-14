@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>zzlab — Software Development Studio</title>
+  <meta name="description" content="zzlab is a software development studio based in Egypt. We build mobile apps, web platforms, and SaaS products that matter.">
+  <meta name="google-site-verification" content="PLACEHOLDER">
+  <meta property="og:title" content="zzlab — Software Development Studio">
+  <meta property="og:description" content="Building digital products that matter. Mobile apps, web platforms, and SaaS — crafted in Egypt.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zzlab.dev">
+  <meta property="og:image" content="https://zzlab.dev/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="zzlab — Software Development Studio">
+  <meta name="twitter:description" content="Building digital products that matter.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #09090b;
+      --surface: #111113;
+      --border: #1c1c1f;
+      --text: #fafafa;
+      --text-secondary: #a1a1aa;
+      --text-tertiary: #52525b;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Fade-in on scroll */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Nav */
+    nav {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    nav a.contact-link {
+      font-size: 14px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav a.contact-link:hover {
+      color: var(--text);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 120px 0 100px;
+      animation-delay: 0.1s;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 8vw, 64px);
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: clamp(16px, 3vw, 20px);
+      color: var(--text-secondary);
+      max-width: 460px;
+      line-height: 1.5;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+
+    .section-text {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 520px;
+    }
+
+    /* Services */
+    .services {
+      animation-delay: 0.2s;
+    }
+
+    /* Product */
+    .product {
+      animation-delay: 0.3s;
+    }
+
+    .product-card {
+      margin-top: 24px;
+      padding: 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      transition: border-color 0.3s;
+    }
+
+    .product-card:hover {
+      border-color: #27272a;
+    }
+
+    .product-name {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .product-name-ar {
+      font-size: 15px;
+      color: var(--text-tertiary);
+      font-weight: 400;
+      margin-left: 8px;
+    }
+
+    .product-desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin: 12px 0 20px;
+      line-height: 1.6;
+    }
+
+    .product-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      transition: gap 0.2s;
+    }
+
+    .product-link:hover {
+      gap: 10px;
+    }
+
+    .product-link .arrow {
+      transition: transform 0.2s;
+    }
+
+    .product-link:hover .arrow {
+      transform: translateX(2px);
+    }
+
+    .platforms {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .platform-badge {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      padding: 4px 10px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+
+    /* Contact */
+    .contact {
+      animation-delay: 0.4s;
+    }
+
+    .contact a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 500;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2px;
+      transition: border-color 0.2s;
+    }
+
+    .contact a:hover {
+      border-color: var(--text-secondary);
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+
+    .location {
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .hero {
+        padding: 80px 0 60px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .product-card {
+        padding: 20px;
+      }
+
+      footer .container {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <a href="/" class="logo">zzlab</a>
+      <a href="mailto:hello@zzlab.dev" class="contact-link">hello@zzlab.dev</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div class="hero fade-in">
+      <h1>Building digital<br>products that matter.</h1>
+      <p>Software development studio based in Egypt, focused on crafting products people actually use.</p>
+    </div>
+
+    <section class="services fade-in" style="animation-delay: 0.15s">
+      <p class="section-label">What we do</p>
+      <p class="section-text">
+        We design and build mobile apps, web platforms, and SaaS products. From idea to launch — lean, fast, and with obsessive attention to detail.
+      </p>
+    </section>
+
+    <section class="product fade-in" style="animation-delay: 0.25s">
+      <p class="section-label">Products</p>
+      <div class="product-card">
+        <p class="product-name">3andak <span class="product-name-ar">عندك</span></p>
+        <p class="product-desc">
+          A marketplace app connecting buyers with nearby sellers. Find what you need, from the people around you.
+        </p>
+        <a href="https://3ndk.app" class="product-link" target="_blank" rel="noopener">
+          Visit 3ndk.app <span class="arrow">&rarr;</span>
+        </a>
+        <div class="platforms">
+          <span class="platform-badge">App Store</span>
+          <span class="platform-badge">Google Play</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact fade-in" style="animation-delay: 0.35s">
+      <p class="section-label">Get in touch</p>
+      <a href="mailto:hello@zzlab.dev">hello@zzlab.dev</a>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 zzlab</p>
+      <p class="location">Egypt</p>
+    </div>
+  </footer>
+
+</body>
+</html>
