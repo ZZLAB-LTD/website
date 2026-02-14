@@ -29,7 +29,7 @@
     }
   }
   </script>
-  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -235,9 +235,14 @@
     }
 
     .store-badge {
-      height: 38px;
+      height: 44px;
       opacity: 0.85;
       transition: opacity 0.2s;
+    }
+
+    .store-badge-gp {
+      height: 64px;
+      margin: -12px -12px -12px 0;
     }
 
     .store-badges a:hover .store-badge {
@@ -348,7 +353,7 @@
             <img src="images/app-store-badge.svg" alt="Download on the App Store" class="store-badge">
           </a>
           <a href="https://play.google.com/store/apps/details?id=com.ndk.app" target="_blank" rel="noopener" aria-label="Get it on Google Play">
-            <img src="images/google-play-badge.png" alt="Get it on Google Play" class="store-badge">
+            <img src="images/google-play-badge.png" alt="Get it on Google Play" class="store-badge store-badge-gp">
           </a>
         </div>
       </div>
