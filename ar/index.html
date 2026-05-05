@@ -26,13 +26,19 @@
   <meta name="twitter:title" content="zzlab — استوديو تطوير برمجيات في مصر">
   <meta name="twitter:description" content="بنحوّل الأفكار لمنتجات الناس بتحبها.">
   <meta name="twitter:image" content="https://zzlab.dev/images/logo.png">
-  <meta name="keywords" content="شركة برمجة في مصر, تطوير تطبيقات موبايل, شركة تطوير برمجيات مصر, تصميم مواقع, برمجة تطبيقات أندرويد وأيفون, software house Egypt, تطوير SaaS">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4240MWQPP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z4240MWQPP');
+</script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["Organization", "ProfessionalService"],
+        "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
         "@id": "https://zzlab.dev/#organization",
         "name": "zzlab",
         "url": "https://zzlab.dev",
@@ -46,7 +52,51 @@
           {"@type": "Country", "name": "مصر"},
           {"@type": "Place", "name": "الشرق الأوسط وشمال أفريقيا"}
         ],
-        "knowsLanguage": ["en", "ar"]
+        "knowsLanguage": ["en", "ar"],
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "خدمات تطوير البرمجيات",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "تطوير تطبيقات الموبايل",
+                "description": "تطوير تطبيقات أصلية ومتعددة المنصات لـ iOS و Android"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "تطوير منصات الويب",
+                "description": "تطوير تطبيقات ويب ومنصات متكاملة"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "تطوير منتجات SaaS",
+                "description": "تطوير منتجات SaaS من الفكرة حتى الإطلاق"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://zzlab.dev/#website",
+        "url": "https://zzlab.dev",
+        "name": "zzlab",
+        "publisher": {"@id": "https://zzlab.dev/#organization"},
+        "inLanguage": ["en", "ar"]
       },
       {
         "@type": "WebPage",
@@ -93,12 +143,54 @@
             }
           }
         ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "الرئيسية",
+            "item": "https://zzlab.dev/ar/"
+          }
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://zzlab.dev/#3ndk",
+        "name": "عندك؟",
+        "url": "https://3ndk.app",
+        "operatingSystem": "ANDROID, IOS",
+        "applicationCategory": "LifestyleApplication",
+        "description": "تطبيق سوق يربط المشترين بالبائعين القريبين. اعثر على ما تحتاجه من الأشخاص حولك.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EGP"
+        },
+        "author": {"@id": "https://zzlab.dev/#organization"}
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://zzlab.dev/#nuss",
+        "name": "نـصّ",
+        "url": "https://nuss.ink",
+        "operatingSystem": "Web",
+        "applicationCategory": "BusinessApplication",
+        "description": "مساحة كتابة عربية أولى بالذكاء الاصطناعي. حوّل الصوت واليوتيوب لنصوص، تحدث مع مستنداتك، واستخدم أدوات معرفية مدعومة بالقرآن.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {"@id": "https://zzlab.dev/#organization"}
       }
     ]
   }
   </script>
   <link rel="icon" href="../images/logo-nobg.png" media="(prefers-color-scheme: light)">
   <link rel="icon" href="../images/logo-nobg-white.png" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" href="../images/app-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -383,6 +475,12 @@
       line-height: 1.7;
     }
 
+    .service-card-link {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
     /* Process */
     .process-section {
       border-top: 1px solid var(--border);
@@ -450,8 +548,21 @@
 
     .product-header {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 14px;
+    }
+
+    .product-header-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .store-badges {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+      flex-shrink: 0;
     }
 
     .product-icon {
@@ -459,6 +570,10 @@
       height: 48px;
       border-radius: 12px;
       flex-shrink: 0;
+    }
+
+    .product-icon-dark {
+      background: #000;
     }
 
     .product-name {
@@ -475,43 +590,72 @@
       font-family: var(--font-en);
     }
 
-    .product-site {
-      font-size: 13px;
+    .product-subtitle {
+      font-size: 14px;
       color: var(--text-tertiary);
-      text-decoration: none;
-      transition: color 0.2s;
+      font-weight: 400;
       font-family: var(--font-en);
-      direction: ltr;
-    }
-
-    .product-site:hover {
-      color: var(--text-secondary);
+      margin-top: 2px;
     }
 
     .product-desc {
       font-size: 15px;
       color: var(--text-secondary);
-      margin: 14px 0 0;
+      margin: 24px 0 0;
       line-height: 1.7;
       flex-grow: 1;
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-top: 16px;
+    }
+
+    .product-url {
+      font-size: 14px;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.2s;
+      font-family: var(--font-en);
+      direction: ltr;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .product-url:hover {
+      color: var(--text-secondary);
+    }
+
+    .product-url svg {
+      width: 13px;
+      height: 13px;
+    }
+
+    .product-footer-sep {
+      width: 16px;
     }
 
     .store-badges {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-top: 20px;
+      gap: 6px;
+      flex-shrink: 0;
     }
 
     .store-badge {
-      height: 40px;
+      height: 26px;
       opacity: 0.85;
       transition: opacity 0.2s;
+      vertical-align: middle;
     }
 
     .store-badge-gp {
-      height: 58px;
-      margin: -10px 0 -10px -10px;
+      height: 38px;
+      margin-top: -6px;
+      margin-bottom: -6px;
     }
 
     .store-badges a:hover .store-badge {
@@ -522,7 +666,6 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      margin-top: 20px;
       font-size: 14px;
       font-weight: 500;
       color: var(--text-secondary);
@@ -641,11 +784,29 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
-    footer p {
+    .footer-left p {
       font-size: 13px;
       color: var(--text-tertiary);
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-nav a {
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover {
+      color: var(--text);
     }
 
     .location {
@@ -691,8 +852,14 @@
 
       footer .container {
         flex-direction: column;
-        gap: 8px;
+        gap: 12px;
         text-align: center;
+      }
+
+      .footer-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
       }
     }
   </style>
@@ -701,7 +868,12 @@
 
   <nav>
     <div class="container">
-      <a href="/ar/" class="logo"><img src="../images/logo-nobg.png" alt="zzlab" class="logo-img"></a>
+      <a href="/ar/" class="logo">
+        <picture>
+          <source srcset="../images/logo-nobg.webp" type="image/webp">
+          <img src="../images/logo-nobg.png" alt="zzlab" class="logo-img" width="32" height="32">
+        </picture>
+      </a>
       <div class="nav-right">
         <ul class="nav-links">
           <li><a href="#services">خدماتنا</a></li>
@@ -718,140 +890,155 @@
   <div class="container">
 
     <div class="hero reveal">
-      <h1>بنحوّل أفكارك<br>لمنتجات الناس بتحبها.</h1>
-      <p class="subtitle">استوديو تطوير برمجيات في مصر. بنصمم ونبني تطبيقات موبايل ومنصات ويب ومنتجات SaaS — من أول سطر كود لحد الإطلاق.</p>
+      <h1>بنحوّل فكرتك<br>لمنتج الناس بتحبه.</h1>
+      <p class="subtitle">شركة برمجة في مصر. بنبني تطبيقات موبايل ومواقع ومنتجات رقمية — من الصفر لحد الإطلاق.</p>
       <div class="hero-ctas">
-        <a href="mailto:hello@zzlab.dev" class="btn btn-primary">احصل على استشارة مجانية</a>
-        <a href="#work" class="btn btn-secondary">شوف شغلنا</a>
+        <a href="mailto:hello@zzlab.dev" class="btn btn-primary">احجز استشارة مجانية</a>
+        <a href="#work" class="btn btn-secondary">شوف أعمالنا</a>
       </div>
     </div>
 
     <section id="services" class="services-section reveal">
       <p class="section-label">خدماتنا</p>
-      <h2 class="section-title">تطوير منتجات من الألف للياء.</h2>
-      <p class="section-desc">من الفكرة للإنتاج — بنتولى التصميم والهندسة والإطلاق عشان تقدر تركز على شغلك.</p>
+      <h2 class="section-title">كل حاجة في مكان واحد.</h2>
+      <p class="section-desc">التصميم، البرمجة، والإطلاق. انت ركز على شغلك واحنا نتولى التنفيذ.</p>
       <div class="services-grid">
-        <div class="service-card">
+        <a href="/ar/mobile-app-development/" class="service-card service-card-link">
           <span class="service-icon" aria-hidden="true">&#9724;</span>
           <h3>تطبيقات موبايل</h3>
-          <p>تطبيقات iOS و Android — native و cross-platform. مبنية للأداء، مصممة للناس.</p>
-        </div>
-        <div class="service-card">
+          <p>تطبيق على المتاجر بيشغل سريع ومرتب. آيفون وأندرويد — من أول سكيتش لحد التنزيل.</p>
+        </a>
+        <a href="/ar/web-development/" class="service-card service-card-link">
           <span class="service-icon" aria-hidden="true">&#9670;</span>
-          <h3>منصات ويب</h3>
-          <p>تطبيقات ويب كاملة وداشبوردات. بنية تحتية قابلة للتوسع وواجهات نظيفة.</p>
-        </div>
-        <div class="service-card">
+          <h3>مواقع ومنصات</h3>
+          <p>موقع أو منصة ويب متكاملة. لوحة تحكم، تسجيل دخول، دفع أونلاين — كل اللي شغلك محتاجه.</p>
+        </a>
+        <a href="/ar/saas-development/" class="service-card service-card-link">
           <span class="service-icon" aria-hidden="true">&#9679;</span>
-          <h3>منتجات SaaS</h3>
-          <p>من الفكرة للـ MRR. تسجيل دخول، فوترة، تحليلات — كل حاجة جاهزة.</p>
-        </div>
+          <h3>منتجات رقمية</h3>
+          <p>منتج بيتدفع عليه كل شهر. من الفكرة لأول عميل يشترك. بنجهز كل حاجة جاهزة.</p>
+        </a>
       </div>
     </section>
 
     <section id="work" class="products-section reveal">
-      <p class="section-label">منتجاتنا</p>
-      <h2 class="section-title">حاجات بنيناها.</h2>
-      <p class="section-desc">مش بس بنبني للعملاء — بنبني منتجاتنا الخاصة كمان. دي اللي شغالة دلوقتي.</p>
+      <p class="section-label">أعمالنا</p>
+      <h2 class="section-title">منتجات أطلقناها وشغالة دلوقتي.</h2>
+      <p class="section-desc">مش بس بنبني للعملاء — عندنا منتجاتنا الخاصة.</p>
       <div class="products-grid">
         <div class="product-card">
           <div class="product-header">
-            <img src="../images/app-icon.png" alt="أيقونة تطبيق عندك" class="product-icon">
-            <div>
-              <p class="product-name">عندك؟ <span class="product-name-en" dir="ltr">3ndk?</span></p>
-              <a href="https://3ndk.app" class="product-site" target="_blank" rel="noopener">3ndk.app</a>
+            <picture>
+              <source srcset="../images/app-icon.webp" type="image/webp">
+              <img src="../images/app-icon.png" alt="أيقونة تطبيق عندك" class="product-icon" width="48" height="48" loading="lazy" decoding="async">
+            </picture>
+            <div class="product-header-info">
+              <p class="product-name">عندك؟</p>
+              <p class="product-subtitle"><bdi>3ndk?</bdi></p>
+            </div>
+            <div class="store-badges">
+              <a href="https://apps.apple.com/app/id6757361034" target="_blank" rel="noopener" aria-label="حمّل من App Store">
+                <img src="../images/app-store-badge.svg" alt="حمّل من App Store" class="store-badge" width="88" height="26" loading="lazy">
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.ndk.app" target="_blank" rel="noopener" aria-label="حمّل من Google Play">
+                <img src="../images/google-play-badge.png" alt="حمّل من Google Play" class="store-badge store-badge-gp" width="98" height="38" loading="lazy">
+              </a>
             </div>
           </div>
-          <p class="product-desc">تطبيق سوق بيربط المشترين بالبائعين القريبين منهم. لاقي اللي محتاجه من الناس اللي حواليك.</p>
-          <div class="store-badges">
-            <a href="https://apps.apple.com/app/id6757361034" target="_blank" rel="noopener" aria-label="حمّل من App Store">
-              <img src="../images/app-store-badge.svg" alt="حمّل من App Store" class="store-badge">
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.ndk.app" target="_blank" rel="noopener" aria-label="حمّل من Google Play">
-              <img src="../images/google-play-badge.png" alt="حمّل من Google Play" class="store-badge store-badge-gp">
-            </a>
+          <p class="product-desc">دليل محلات مصر. بدل ما تسأل في جروبات "حد يعرف مكان بيبيع كذا؟" — ابعت طلب والمحلات القريبة هتتواصل معاك.</p>
+          <div class="product-footer">
+            <a href="https://3ndk.app" class="product-url" target="_blank" rel="noopener">3ndk.app <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 2h4v4"/><path d="M14 2L7 9"/><path d="M5 5H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1"/></svg></a>
+            <span class="product-footer-sep"></span>
+            <a href="/ar/case-studies/3ndk/" class="product-link">اقرأ دراسة الحالة <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 8H3M7 4l-4 4 4 4"/></svg></a>
           </div>
         </div>
         <div class="product-card">
           <div class="product-header">
-            <img src="../images/nuss-icon.jpg" alt="أيقونة تطبيق نصّ" class="product-icon">
-            <div>
-              <p class="product-name">نـصّ <span class="product-name-en">nuss</span></p>
-              <a href="https://nuss.ink" class="product-site" target="_blank" rel="noopener">nuss.ink</a>
+            <picture>
+              <source srcset="../images/nuss-white.webp" type="image/webp">
+              <img src="../images/nuss-white.png" alt="أيقونة تطبيق نصّ" class="product-icon product-icon-dark" width="48" height="48" loading="lazy" decoding="async">
+            </picture>
+            <div class="product-header-info">
+              <p class="product-name">نـصّ</p>
+              <p class="product-subtitle">nuss</p>
             </div>
           </div>
-          <p class="product-desc">مساحة كتابة ذكية بالعربي أولًا. فرّغ صوت ويوتيوب، اتكلم مع مستنداتك، واستخدم أدوات معرفة مبنية على القرآن.</p>
-          <a href="https://nuss.ink" class="product-link" target="_blank" rel="noopener">جرّب نصّ <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 8H3M7 4l-4 4 4 4"/></svg></a>
+          <p class="product-desc">أداة كتابة بالذكاء الاصطناعي معمولة للعربي أولًا. فرّغ صوت ويوتيوب لنص، ناقش مستنداتك، وابحث في القرآن.</p>
+          <div class="product-footer">
+            <a href="https://nuss.ink" class="product-url" target="_blank" rel="noopener">nuss.ink <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 2h4v4"/><path d="M14 2L7 9"/><path d="M5 5H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1"/></svg></a>
+            <span class="product-footer-sep"></span>
+            <a href="/ar/case-studies/nuss/" class="product-link">اقرأ دراسة الحالة <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 8H3M7 4l-4 4 4 4"/></svg></a>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="process" class="process-section reveal">
       <p class="section-label">طريقة شغلنا</p>
-      <h2 class="section-title">بساطة، سرعة، من غير كلام فاضي.</h2>
-      <p class="section-desc">بنخلي الموضوع بسيط. أربع خطوات من الفكرة لمنتج في إيد المستخدمين.</p>
+      <h2 class="section-title">بسيطة، سريعة، بدون تعقيد.</h2>
+      <p class="section-desc">بنخلي الموضوع بسيط. من الفكرة لمنتج في إيد الناس.</p>
       <div class="process-steps">
         <div class="process-step">
           <div class="step-number">01</div>
-          <h3>اكتشاف</h3>
-          <p>بنفهم رؤيتك والمستخدمين والقيود. من غير مستند ٥٠ صفحة — بس وضوح.</p>
+          <h3>بنفهمك</h3>
+          <p>بنسمعك، نفهم اللي عايزه واللي المستخدمين محتاجينه. مش محتاجين مواصفات معقدة — محتاجين وضوح.</p>
         </div>
         <div class="process-step">
           <div class="step-number">02</div>
-          <h3>تصميم</h3>
-          <p>واجهات نظيفة ومركزة. بنعمل prototype بسرعة عشان تشوف منتجك قبل أي كود.</p>
+          <h3>نصممه</h3>
+          <p>بنصمم واجهات بسيطة ونديك نموذج تفاعلي تشوف منتجك قبل ما نكتب أي كود.</p>
         </div>
         <div class="process-step">
           <div class="step-number">03</div>
-          <h3>بناء</h3>
-          <p>تقنيات حديثة، سبرنتات متكررة، عروض أسبوعية. دايمًا عارف إيه اللي بيحصل.</p>
+          <h3>نبنيه</h3>
+          <p>بنشتغل في مراحل قصيرة ونبعتك تحديثات كل أسبوع. دايمًا عارف إيه اللي بيحصل.</p>
         </div>
         <div class="process-step">
           <div class="step-number">04</div>
-          <h3>إطلاق</h3>
-          <p>رفع على المتاجر، نشر، ومراقبة. بننزّل المنتج ونتأكد إنه شغال.</p>
+          <h3>نطلقه</h3>
+          <p>بننزّل التطبيق على المتاجر ونراقبه. ومفضلين معاك نتأكد إن كل حاجة شغالة تمام.</p>
         </div>
       </div>
     </section>
 
     <section id="faq" class="faq-section reveal">
       <p class="section-label">أسئلة شائعة</p>
-      <h2 class="section-title">أسئلة بتتكرر.</h2>
+      <h2 class="section-title">سؤال بيتسأل كتير.</h2>
       <div class="faq-list">
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            بياخد وقت قد إيه عشان نبني تطبيق موبايل؟
+            بتبني تطبيق موبايل في وقت قد إيه؟
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p>بيختلف حسب حجم المشروع — بس بالأدوات الحديثة والـ AI، المشاريع الصغيرة ممكن تخلص في يومين، والأكبر في أسبوع لأسابيع قليلة. بنحدد كل حاجة في مكالمة الاستكشاف المجانية.</p>
+            <p>بيختلف حسب حجم المشروع — بس مع الأدوات الحديثة والـ AI، المشاريع الصغيرة ممكن تخلص في يومين، والكبيرة في أسبوع لأسابيع قليلة. كل مشروع بنحدد مدته في مكالمة الاستكشاف المجانية.</p>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            بتستخدموا إيه من تقنيات؟
+            بتستخدموا إيه تقنيات؟
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p>بنختار الأدوات المناسبة لكل مشروع. للموبايل بنشتغل بـ React Native و Swift و Kotlin. للويب بنستخدم TypeScript و Next.js و React و Node.js. وكمان بنستخدم AI في عملية التطوير عشان ننجز أسرع وأذكى.</p>
+            <p>بنختار اللي يناسب كل مشروع. موبايل: React Native و Swift و Kotlin. ويب: TypeScript و Next.js و React و Node.js. وبنستخدم الذكاء الاصطناعي عشان نسرّع عملية التطوير ونطلع جودة أعلى.</p>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            بتشتغلوا مع ستارت أبس بس ولا شركات كبيرة كمان؟
+            شغالين مع شركات ناشئة بس ولا شركات كبيرة برضه؟
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p>الاتنين. بنحب نشتغل مع الستارت أبس اللي محتاجة تتحرك بسرعة وتنزّل MVP، وكمان بنتعاون مع شركات قائمة عايزة تبني منتجات رقمية جديدة.</p>
+            <p>الاتنين. بنحب نشتغل مع اللي بيبدأوا وعايزين يتحركوا بسرعة ويطلقوا MVP، وكمان مع شركات قائمة عايزة تبني منتجات رقمية جديدة أو تحدّث اللي عندها.</p>
           </div>
         </div>
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            تكلفة بناء تطبيق في مصر قد إيه؟
+            تكلفة بناء تطبيق في مصر كام تقريبًا؟
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p>كل مشروع مختلف. بنقدم تقدير تفصيلي بعد مكالمة الاستكشاف المجانية اللي بنفهم فيها أهدافك ونطاق المشروع والجدول الزمني. كوننا في مصر يعني بتاخد هندسة عالمية بأسعار تنافسية.</p>
+            <p>كل مشروع مختلف عن التاني. بنقدم تقدير تفصيلي بعد ما نفهم أهدافك والمطلوب بالضبط في مكالمة الاستكشاف المجانية. اللي يفرق معانا إنك تاخد جودة عالمية بسعر تنافسي.</p>
           </div>
         </div>
       </div>
@@ -859,8 +1046,8 @@
 
     <section class="cta-section reveal">
       <p class="section-label">جاهز؟</p>
-      <h2 class="section-title">يلا نبني حاجة عظيمة مع بعض.</h2>
-      <p class="section-desc">كلمنا عن مشروعك. هنرد عليك خلال ٢٤ ساعة.</p>
+      <h2 class="section-title">خلينا نتكلم عن فكرتك.</h2>
+      <p class="section-desc">احكيلنا عن مشروعك. هندرد عليك خلال ٢٤ ساعة.</p>
       <div class="cta-buttons">
         <a href="mailto:hello@zzlab.dev" class="btn btn-primary">ابدأ مشروعك</a>
         <a href="mailto:hello@zzlab.dev" class="btn btn-secondary">hello@zzlab.dev</a>
@@ -871,7 +1058,15 @@
 
   <footer>
     <div class="container">
-      <p>&copy; <script>document.write(new Date().getFullYear())</script> zzlab</p>
+      <div class="footer-left">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> zzlab</p>
+      </div>
+      <div class="footer-nav">
+        <a href="/ar/#services">خدماتنا</a>
+        <a href="/ar/#work">أعمالنا</a>
+        <a href="/privacy-policy">الخصوصية</a>
+        <a href="/terms">الشروط</a>
+      </div>
       <p class="location">مصر</p>
     </div>
   </footer>
