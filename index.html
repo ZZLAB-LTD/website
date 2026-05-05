@@ -5,11 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>zzlab — Software Development Studio in Egypt</title>
   <meta name="description" content="zzlab is a software development studio in Egypt specializing in mobile app development, web platforms, and SaaS products. From idea to launch — we build products people actually use.">
-  <meta name="keywords" content="software development company Egypt, mobile app development Egypt, software house Egypt, web development agency Egypt, SaaS development, app development MENA, software studio Cairo, hire developers Egypt">
   <meta name="robots" content="index, follow">
   <meta name="author" content="zzlab">
   <meta name="theme-color" content="#09090b">
   <meta name="google-site-verification" content="google3cba117717840410">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4240MWQPP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z4240MWQPP');
+</script>
   <link rel="canonical" href="https://zzlab.dev/">
   <link rel="alternate" hreflang="en" href="https://zzlab.dev/">
   <link rel="alternate" hreflang="ar" href="https://zzlab.dev/ar/">
@@ -28,12 +34,12 @@
   <meta name="twitter:title" content="zzlab — Software Development Studio in Egypt">
   <meta name="twitter:description" content="We turn ideas into products people love.">
   <meta name="twitter:image" content="https://zzlab.dev/images/logo.png">
-  <script type="application/ld+json">
+    <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["Organization", "ProfessionalService"],
+        "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
         "@id": "https://zzlab.dev/#organization",
         "name": "zzlab",
         "url": "https://zzlab.dev",
@@ -48,6 +54,12 @@
           {"@type": "Place", "name": "Middle East and North Africa"}
         ],
         "knowsLanguage": ["en", "ar"],
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Software Development Services",
@@ -88,6 +100,15 @@
         "inLanguage": ["en", "ar"]
       },
       {
+        "@type": "WebPage",
+        "@id": "https://zzlab.dev/#webpage",
+        "url": "https://zzlab.dev/",
+        "name": "zzlab — Software Development Studio in Egypt",
+        "isPartOf": {"@id": "https://zzlab.dev/#website"},
+        "about": {"@id": "https://zzlab.dev/#organization"},
+        "inLanguage": "en"
+      },
+      {
         "@type": "FAQPage",
         "mainEntity": [
           {
@@ -123,12 +144,54 @@
             }
           }
         ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://zzlab.dev/"
+          }
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://zzlab.dev/#3ndk",
+        "name": "3ndk?",
+        "url": "https://3ndk.app",
+        "operatingSystem": "ANDROID, IOS",
+        "applicationCategory": "LifestyleApplication",
+        "description": "A marketplace app connecting buyers with nearby sellers. Find what you need, from the people around you.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EGP"
+        },
+        "author": {"@id": "https://zzlab.dev/#organization"}
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://zzlab.dev/#nuss",
+        "name": "nuss",
+        "url": "https://nuss.ink",
+        "operatingSystem": "Web",
+        "applicationCategory": "BusinessApplication",
+        "description": "An Arabic-first AI writing workspace. Transcribe audio and YouTube, chat with your documents, and tap into Quran-powered knowledge tools.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {"@id": "https://zzlab.dev/#organization"}
       }
     ]
   }
   </script>
   <link rel="icon" href="images/logo-nobg.png" media="(prefers-color-scheme: light)">
   <link rel="icon" href="images/logo-nobg-white.png" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" href="images/app-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -408,6 +471,22 @@
       letter-spacing: -0.01em;
     }
 
+    .service-link {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .service-link:hover {
+      color: var(--text-secondary);
+    }
+
+    .service-card-link {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
     .service-card p {
       font-size: 14px;
       color: var(--text-secondary);
@@ -480,8 +559,26 @@
 
     .product-header {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 14px;
+    }
+
+    .product-header-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .store-badges {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+      flex-shrink: 0;
+    }
+
+    .product-header-info {
+      flex: 1;
+      min-width: 0;
     }
 
     .product-icon {
@@ -489,6 +586,10 @@
       height: 48px;
       border-radius: 12px;
       flex-shrink: 0;
+    }
+
+    .product-icon-dark {
+      background: #000;
     }
 
     .product-name {
@@ -506,41 +607,103 @@
       font-family: var(--font-ar);
     }
 
-    .product-site {
-      font-size: 13px;
+    .product-subtitle {
+      font-size: 14px;
       color: var(--text-tertiary);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .product-site:hover {
-      color: var(--text-secondary);
+      font-weight: 400;
+      font-family: var(--font-ar);
+      margin-top: 2px;
     }
 
     .product-desc {
       font-size: 15px;
       color: var(--text-secondary);
-      margin: 14px 0 0;
+      margin: 24px 0 0;
       line-height: 1.6;
       flex-grow: 1;
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-top: 16px;
+    }
+
+    .product-url {
+      font-size: 14px;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .product-url:hover {
+      color: var(--text-secondary);
+    }
+
+    .product-url svg {
+      width: 13px;
+      height: 13px;
+    }
+
+    .product-footer-sep {
+      width: 16px;
+    }
+
+    .product-subtitle {
+      font-size: 14px;
+      color: var(--text-tertiary);
+      font-weight: 400;
+      font-family: var(--font-ar);
+    }
+
+    .product-desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin: 24px 0 0;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .product-url {
+      font-size: 14px;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .product-url:hover {
+      color: var(--text-secondary);
     }
 
     .store-badges {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-top: 20px;
+      gap: 6px;
+      flex-shrink: 0;
     }
 
     .store-badge {
-      height: 40px;
+      height: 26px;
       opacity: 0.85;
       transition: opacity 0.2s;
+      vertical-align: middle;
     }
 
     .store-badge-gp {
-      height: 58px;
-      margin: -10px -10px -10px 0;
+      height: 38px;
+      margin-top: -6px;
+      margin-bottom: -6px;
     }
 
     .store-badges a:hover .store-badge {
@@ -551,7 +714,6 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      margin-top: 20px;
       font-size: 14px;
       font-weight: 500;
       color: var(--text-secondary);
@@ -670,11 +832,29 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
-    footer p {
+    .footer-left p {
       font-size: 13px;
       color: var(--text-tertiary);
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-nav a {
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover {
+      color: var(--text);
     }
 
     .location {
@@ -720,8 +900,14 @@
 
       footer .container {
         flex-direction: column;
-        gap: 8px;
+        gap: 12px;
         text-align: center;
+      }
+
+      .footer-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
       }
     }
   </style>
@@ -730,7 +916,12 @@
 
   <nav>
     <div class="container">
-      <a href="/" class="logo"><img src="images/logo-nobg.png" alt="zzlab" class="logo-img"></a>
+      <a href="/" class="logo">
+        <picture>
+          <source srcset="images/logo-nobg.webp" type="image/webp">
+          <img src="images/logo-nobg.png" alt="zzlab" class="logo-img" width="32" height="32">
+        </picture>
+      </a>
       <div class="nav-right">
         <ul class="nav-links">
           <li><a href="#services">Services</a></li>
@@ -760,21 +951,21 @@
       <h2 class="section-title">End-to-end product development.</h2>
       <p class="section-desc">From concept to production — we handle design, engineering, and launch so you can focus on your business.</p>
       <div class="services-grid">
-        <div class="service-card">
+        <a href="/mobile-app-development/" class="service-card service-card-link">
           <span class="service-icon" aria-hidden="true">&#9724;</span>
           <h3>Mobile Apps</h3>
           <p>Native and cross-platform apps for iOS and Android. Built for performance, designed for humans.</p>
-        </div>
-        <div class="service-card">
+        </a>
+        <a href="/web-development/" class="service-card service-card-link">
           <span class="service-icon" aria-hidden="true">&#9670;</span>
           <h3>Web Platforms</h3>
           <p>Full-stack web applications and dashboards. Scalable architecture, clean interfaces.</p>
-        </div>
-        <div class="service-card">
+        </a>
+        <a href="/saas-development/" class="service-card service-card-link">
           <span class="service-icon" aria-hidden="true">&#9679;</span>
           <h3>SaaS Products</h3>
           <p>End-to-end SaaS from idea to MRR. Authentication, billing, analytics — all handled.</p>
-        </div>
+        </a>
       </div>
     </section>
 
@@ -785,32 +976,47 @@
       <div class="products-grid">
         <div class="product-card">
           <div class="product-header">
-            <img src="images/app-icon.png" alt="3ndk app icon" class="product-icon">
-            <div>
-              <p class="product-name">3ndk? <span class="product-name-ar">عندك؟</span></p>
-              <a href="https://3ndk.app" class="product-site" target="_blank" rel="noopener">3ndk.app</a>
+            <picture>
+              <source srcset="images/app-icon.webp" type="image/webp">
+              <img src="images/app-icon.png" alt="3ndk app icon" class="product-icon" width="48" height="48" loading="lazy" decoding="async">
+            </picture>
+            <div class="product-header-info">
+              <p class="product-name">3ndk?</p>
+              <p class="product-subtitle">عندك؟</p>
+            </div>
+            <div class="store-badges">
+              <a href="https://apps.apple.com/app/id6757361034" target="_blank" rel="noopener" aria-label="Download on the App Store">
+                <img src="images/app-store-badge.svg" alt="Download on the App Store" class="store-badge" width="88" height="26" loading="lazy">
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.ndk.app" target="_blank" rel="noopener" aria-label="Get it on Google Play">
+                <img src="images/google-play-badge.png" alt="Get it on Google Play" class="store-badge store-badge-gp" width="98" height="38" loading="lazy">
+              </a>
             </div>
           </div>
           <p class="product-desc">A marketplace app connecting buyers with nearby sellers. Find what you need, from the people around you.</p>
-          <div class="store-badges">
-            <a href="https://apps.apple.com/app/id6757361034" target="_blank" rel="noopener" aria-label="Download on the App Store">
-              <img src="images/app-store-badge.svg" alt="Download on the App Store" class="store-badge">
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.ndk.app" target="_blank" rel="noopener" aria-label="Get it on Google Play">
-              <img src="images/google-play-badge.png" alt="Get it on Google Play" class="store-badge store-badge-gp">
-            </a>
+          <div class="product-footer">
+            <a href="https://3ndk.app" class="product-url" target="_blank" rel="noopener">3ndk.app <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 2h4v4"/><path d="M14 2L7 9"/><path d="M5 5H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1"/></svg></a>
+            <span class="product-footer-sep"></span>
+            <a href="/case-studies/3ndk/" class="product-link">Read case study <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
           </div>
         </div>
         <div class="product-card">
           <div class="product-header">
-            <img src="images/nuss-icon.jpg" alt="nuss app icon" class="product-icon">
-            <div>
-              <p class="product-name">nuss <span class="product-name-ar">نـصّ</span></p>
-              <a href="https://nuss.ink" class="product-site" target="_blank" rel="noopener">nuss.ink</a>
+            <picture>
+              <source srcset="images/nuss-white.webp" type="image/webp">
+              <img src="images/nuss-white.png" alt="nuss app icon" class="product-icon product-icon-dark" width="48" height="48" loading="lazy" decoding="async">
+            </picture>
+            <div class="product-header-info">
+              <p class="product-name">nuss</p>
+              <p class="product-subtitle">نـصّ</p>
             </div>
           </div>
           <p class="product-desc">An Arabic-first AI writing workspace. Transcribe audio and YouTube, chat with your documents, and tap into Quran-powered knowledge tools.</p>
-          <a href="https://nuss.ink" class="product-link" target="_blank" rel="noopener">Try nuss <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <div class="product-footer">
+            <a href="https://nuss.ink" class="product-url" target="_blank" rel="noopener">nuss.ink <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 2h4v4"/><path d="M14 2L7 9"/><path d="M5 5H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1"/></svg></a>
+            <span class="product-footer-sep"></span>
+            <a href="/case-studies/nuss/" class="product-link">Read case study <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
         </div>
       </div>
     </section>
@@ -900,7 +1106,17 @@
 
   <footer>
     <div class="container">
-      <p>&copy; <script>document.write(new Date().getFullYear())</script> zzlab</p>
+      <div class="footer-left">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> zzlab</p>
+      </div>
+      <div class="footer-nav">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#process">Process</a>
+        <a href="#faq">FAQ</a>
+        <a href="/privacy-policy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </div>
       <p class="location">Egypt</p>
     </div>
   </footer>
